@@ -13,6 +13,7 @@ const sinopsis = ref('')
 const director = ref('')
 const temporada = ref('')
 const fechaEsteno = ref('')
+const actores = ref('')
 
 async function crearSerie() {
   await http
@@ -21,7 +22,8 @@ async function crearSerie() {
       sinopsis: sinopsis.value,
       director: director.value,
       temporada: temporada.value,
-      fechaEsteno: fechaEsteno.value
+      fechaEsteno: fechaEsteno.value,
+      actores: actores.value
     })
     .then(() => router.push('/series'))
 }
@@ -96,6 +98,11 @@ function goBack() {
             required
           />
           <label for="fechaEstreno">Fecha de Estreno</label>
+        </div>
+
+        <div class="form-floating">
+          <input type="text" class="form-control" v-model="actores" placeholder="Ac" required />
+          <label for="actores">Actores</label>
         </div>
 
         <div class="text-center mt-3">

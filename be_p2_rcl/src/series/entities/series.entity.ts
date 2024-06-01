@@ -22,7 +22,11 @@ export class Series {
     @Column()
     temporada: number;
 
-    @Column({name:'fecha_estreno'})
+    @Column({type: 'date',nullable:false,name:'fecha_estreno'})
     fechaEstreno:Date;
+    
+
+    @Column({type: 'varchar',length:100,nullable:false,name:'actores'})
+    actores:string;
 
 }

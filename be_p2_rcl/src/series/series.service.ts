@@ -27,7 +27,8 @@ constructor(
       sinopsis: createSeriesDto.sinopsis.trim(),
       director: createSeriesDto.director.trim(),
       temporada:createSeriesDto.temporada,
-      fechaEstreno:createSeriesDto.fechaEstreno
+      fechaEstreno:createSeriesDto.fechaEstreno,
+      actores: createSeriesDto.actores.trim()
     });
   }
 // LEER

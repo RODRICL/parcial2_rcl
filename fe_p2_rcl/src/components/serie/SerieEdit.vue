@@ -13,6 +13,7 @@ const sinopsis = ref('')
 const director = ref('')
 const temporada = ref('')
 const fechaEstreno = ref('')
+const actores = ref('')
 
 const id = router.currentRoute.value.params['id']
 
@@ -23,7 +24,8 @@ async function editarSerie() {
       sinopsis: sinopsis.value,
       director: director.value,
       temporada: temporada.value,
-      fechaEstreno: fechaEstreno.value
+      fechaEstreno: fechaEstreno.value,
+      actores: actores.value
     })
 
     .then(() => router.push('/series'))
@@ -35,7 +37,8 @@ async function getSerie() {
       (sinopsis.value = response.data.sinopsis),
       (director.value = response.data.director),
       (temporada.value = response.data.temporada),
-      (fechaEstreno.value = response.data.fechaEstreno)
+      (fechaEstreno.value = response.data.fechaEstreno),
+      (actores.value = response.data.actores)
   })
 }
 
@@ -113,6 +116,17 @@ onMounted(() => {
             required
           />
           <label for="fechaEsteno">Fecha de Estreno</label>
+        </div>
+
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            v-model="actores"
+            placeholder="Autores"
+            required
+          />
+          <label for="actores">Actores</label>
         </div>
 
         <div class="text-center mt-3">

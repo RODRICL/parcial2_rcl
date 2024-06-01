@@ -10,4 +10,6 @@ export interface Serie {
   temporada: number
 
   fechaEstreno: Date
+
+  actores: string
 }
