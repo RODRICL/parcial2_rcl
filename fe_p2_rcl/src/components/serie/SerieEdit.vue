@@ -12,6 +12,7 @@ const titulo = ref('')
 const sinopsis = ref('')
 const director = ref('')
 const temporada = ref('')
+const genero = ref('')
 const fechaEstreno = ref('')
 
 const id = router.currentRoute.value.params['id']
@@ -23,6 +24,7 @@ async function editarSerie() {
       sinopsis: sinopsis.value,
       director: director.value,
       temporada: temporada.value,
+      genero: genero.value,
       fechaEstreno: fechaEstreno.value,
     })
 
@@ -36,6 +38,7 @@ async function getSerie() {
     sinopsis.value = response.data.sinopsis
     director.value = response.data.director
     temporada.value = response.data.temporada
+    tipoGenero.value = response.data.tipoGenero
     fechaEstreno.value = response.data.fechaEstreno
     return response
   } catch (error) {
@@ -106,6 +109,17 @@ onMounted(() => {
             required
           />
           <label for="temporada">Temporada</label>
+        </div>
+
+        <div class="form-floating">
+          <input
+            type="text"
+            class="form-control"
+            v-model="genero"
+            placeholder="Tipo Genero"
+            required
+          />
+          <label for="genero">Tipo Genero</label>
         </div>
 
         <div class="form-floating">

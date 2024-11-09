@@ -18,6 +18,9 @@ export class Series {
   @Column()
   temporada: number;
 
+  @Column({ type: 'varchar', length: 100, nullable: false })
+  tipoGenero: string;
+
   @Column({ type: 'date', nullable: false, name: 'fecha_estreno' })
   fechaEstreno: Date;
 }

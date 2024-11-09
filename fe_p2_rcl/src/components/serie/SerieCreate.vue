@@ -12,6 +12,7 @@ const titulo = ref('')
 const sinopsis = ref('')
 const director = ref('')
 const temporada = ref('')
+const tipoGenero = ref('')
 const fechaEsteno = ref('')
 
 async function crearSerie() {
@@ -21,6 +22,7 @@ async function crearSerie() {
       sinopsis: sinopsis.value,
       director: director.value,
       temporada: temporada.value,
+      tipoGenero: tipoGenero.value,
       fechaEsteno: fechaEsteno.value,
     })
     .then(() => router.push('/series'))
@@ -85,6 +87,16 @@ function goBack() {
             required
           />
           <label for="temporada">Temporada</label>
+        </div>
+
+        <div class="form-floating mb-3">
+          <select class="form-control" v-model="tipoGenero" required>
+            <option value="A">Accion</option>
+            <option value="B">Comedia</option>
+            <option value="B12">Terror</option>
+            <option value="B15">Drama</option>
+          </select>
+          <label for="tipoGenero">tipo Genero</label>
         </div>
 
         <div class="form-floating">

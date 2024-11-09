@@ -32,6 +32,7 @@ export class SeriesService {
       sinopsis: createSeriesDto.sinopsis.trim(),
       director: createSeriesDto.director.trim(),
       temporada: createSeriesDto.temporada,
+      tipoGenero: createSeriesDto.tipoGenero.trim(),
       fechaEstreno: createSeriesDto.fechaEstreno,
     });
   }

@@ -9,5 +9,7 @@ export interface Serie {
 
   temporada: number
 
+  tipoGenero: string
+
   fechaEstreno: Date
 }
